@@ -34,10 +34,7 @@ header{
 .blue{
     color: #374272;
 }
-.blue:hover{
-    /* border-bottom: solid 2px #e6c383; */
 
-}
 .nav-btn:hover{
     transform: translateY(-20%);
 }

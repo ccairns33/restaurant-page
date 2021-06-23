@@ -31,10 +31,13 @@ header{
     font-weight: 500;
     transition: transform 0.3s;
 }
-/* not on tab color: #d9d9d9 greyish */
 .blue{
     color: #374272;
 }
+.grey {
+    color: #bebebe
+}
+
 /* color: #bca77c; coffee color*/
 .menu-content{
     margin: 5% 23% 3% 23%;

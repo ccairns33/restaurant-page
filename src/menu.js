@@ -2,14 +2,27 @@ let loadMenu = () => {
     const content = document.querySelector(".content");
     const menuItems = content.querySelector("#content-items");
     
+    //preventing from loading more than once
+    if(menuItems.classList.contains("loaded")){
+        return;
+    }
     //remove all class names
     menuItems.className = '';
 
     //add menu class
-    menuItems.classList.add("menu-items");
-
+    menuItems.classList.add("menu-items", "loaded");
     menuItems.appendChild(addMenuItems());
-   // menuItems.appendChild(addMenuItems());
+    navBarColorChange();
+
+}
+let navBarColorChange = () => {
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach((button)=> {
+        if(button.textContent !== "Menu"){
+            button.classList.remove("blue");
+            button.classList.add("grey");
+        }
+    });
 }
 let addMenuItems = () =>{
     const menuContent =document.createElement("div");
@@ -66,8 +79,6 @@ let menuItem = (text, price, bool) =>{
         
         return menuItem;
     }
-    
-
     
 }
 export default loadMenu;

@@ -102,8 +102,7 @@ i:hover{
     position: absolute;
     width: 100%;
     bottom: 0;
-    padding: 1rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1rem;
     left: 0;
     right: 0;
     z-index: 1;

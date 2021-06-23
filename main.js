@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _website__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./website */ \"./src/website.js\");\n\n\n(0,_website__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _website_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./website.js */ \"./src/website.js\");\n\n(0,_website_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _web
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n\ncreateHeader = () =>{\n    const header = document.createElement(\"header\");\n    header.classList.add(\"d-flex center\");\n\n    const logo= document.createElement(\"div\");\n    logo.classList.add(\"logo\");\n    logo.textContent = \"Il Caffé Carissimi\";\n    header.appendChild(logo);\n\n    document.querySelector(\".content\").appendChild(header);\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createHeader);\n\n//# sourceURL=webpack://restaurant-page/./src/website.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\nlet createHeader = () =>{\n    const header = document.createElement(\"header\");\n    header.classList.add(\"d-flex\", \"center\");\n\n    const logo= document.createElement(\"div\");\n    logo.classList.add(\"logo\");\n    logo.textContent = \"Il Caffé Carissimi\";\n    header.appendChild(logo);\n    console.log(\"hi\");\n\n    return header;\n\n}\n\nlet initWebsite = () =>{\n    const content = document.querySelector(\".content\");\n    content.appendChild(createHeader());\n}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initWebsite);\n\n//# sourceURL=webpack://restaurant-page/./src/website.js?");
 
 /***/ })
 

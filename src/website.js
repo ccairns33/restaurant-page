@@ -1,6 +1,6 @@
 let createContentItems = () => {
     const contentItems = document.createElement("div");
-    contentItems.classList.add("content-items");
+    contentItems.classList.add("content-items","padding-btm");
 
     return contentItems;
 }

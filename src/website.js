@@ -1,7 +1,7 @@
 // add imports for loading home, contact, and menu
 let createContentItems = () => {
     const contentItems = document.createElement("div");
-    contentItems.classList.add("content-items","padding-btm");
+    contentItems.classList.add("content-items");
 
     return contentItems;
 }

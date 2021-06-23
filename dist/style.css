@@ -37,12 +37,13 @@ header{
 }
 /* color: #bca77c; coffee color*/
 .menu-content{
-    margin: 5% 23% 6% 23%;
+    margin: 5% 23% 3% 23%;
+    padding-bottom: 5%;
     font-weight: 300;
     font-size: .9rem;
     letter-spacing: .075rem;
     line-height: 1.5rem;
-    
+    z-index: 1;
 
 }
 .item-price{
@@ -103,8 +104,5 @@ i:hover{
     width: 100%;
     bottom: 0;
     margin-bottom: 1rem;
-    left: 0;
-    right: 0;
-    z-index: 1;
     justify-content: center;
 }

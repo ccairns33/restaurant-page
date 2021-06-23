@@ -1,7 +1,11 @@
 // add imports for loading home, contact, and menu
+import loadMenu from "./menu.js";
+
+
 let createContentItems = () => {
     const contentItems = document.createElement("div");
     contentItems.classList.add("content-items");
+    contentItems.setAttribute("id", "content-items")
 
     return contentItems;
 }

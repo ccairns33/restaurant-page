@@ -38,6 +38,27 @@ header{
     color: #9b9ea8
 }
 
+.divider {
+    border-bottom: 1px solid rgb(233, 233, 233);
+    margin-top:2rem;
+    margin-bottom: 2rem;
+}
+img{
+    margin-top:2rem;
+    margin-bottom: 2rem;
+}
+.contact-content{
+    margin: 3% 23% 3% 23%;
+    padding-bottom: 5%;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: .075rem;
+    line-height: 2rem;
+    
+
+}
+
 /* color: #bca77c; coffee color*/
 .menu-content{
     margin: 5% 23% 3% 23%;

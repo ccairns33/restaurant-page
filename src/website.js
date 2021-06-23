@@ -50,7 +50,7 @@ let createNav = () =>{
     welcomeBtn.addEventListener("click", (e) => {
         
         addActive(welcomeBtn);
-        loadContact();
+        loadHome();
     })
     menuBtn.addEventListener("click",(e)=>{
         addActive(menuBtn);

@@ -1,3 +1,2 @@
-import createHeader from "./website";
-
-createHeader();
+import initWebsite from "./website.js";
+initWebsite();

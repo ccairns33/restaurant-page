@@ -11,7 +11,7 @@ html,body{
     display:flex;
 }
 header{
-    color: #f8f8f8;
+    color: #fcfcfc;
     font-size: 1.2rem;
     text-align: center;
     text-transform: uppercase;
@@ -31,6 +31,7 @@ header{
     font-weight: 500;
     transition: transform 0.3s;
 }
+/* not on tab color: #d9d9d9 greyish */
 .blue{
     color: #374272;
 }

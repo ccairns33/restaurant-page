@@ -45,11 +45,11 @@ button:hover{
     justify-content: center;
     align-content: center;
 }
-.page-conatiner{
+.content{
     position: relative;
     min-height: 100vh;
 }
-.content{
+.content-items{
     background-image:url("cappucino.jpg");
     height:600px;
     background-size: cover;

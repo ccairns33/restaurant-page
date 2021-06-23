@@ -1,5 +1,7 @@
 // add imports for loading home, contact, and menu
 import loadMenu from "./menu.js";
+import loadContact from "./contact.js";
+
 
 
 let createContentItems = () => {
@@ -32,15 +34,18 @@ let createNav = () =>{
     const welcomeBtn = document.createElement("button");
     welcomeBtn.textContent="Benvenuto!";
     welcomeBtn.classList.add("nav-btn");
+    welcomeBtn.id="home";
     tabDiv.appendChild(welcomeBtn);
 
     const menuBtn = document.createElement("button");
     menuBtn.textContent="Menu";
+    menuBtn.id="menu";
     menuBtn.classList.add("nav-btn");
     tabDiv.appendChild(menuBtn);
 
     const contactBtn = document.createElement("button");
     contactBtn.textContent="Contact";
+    contactBtn.id="contact";
     contactBtn.classList.add("nav-btn", "blue");
     tabDiv.appendChild(contactBtn);
 

@@ -12,13 +12,13 @@ let loadMenu = () => {
     //add menu class
     menuItems.classList.add("menu-items", "loaded");
     menuItems.appendChild(addMenuItems());
-    navBarColorChange();
+    navBarColorChange("menu");
 
 }
-let navBarColorChange = () => {
+let navBarColorChange = (btnLabel) => {
     let buttons = document.querySelectorAll("button");
     buttons.forEach((button)=> {
-        if(button.textContent !== "Menu"){
+        if(button.id !== btnLabel){
             button.classList.remove("blue");
             button.classList.add("grey");
         }
@@ -81,4 +81,4 @@ let menuItem = (text, price, bool) =>{
     }
     
 }
-export default loadMenu;
+export default {loadMenu, navBarColorChange};

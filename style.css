@@ -35,7 +35,7 @@ header{
     color: #374272;
 }
 .grey {
-    color: #bebebe
+    color: #9b9ea8
 }
 
 /* color: #bca77c; coffee color*/
@@ -47,7 +47,7 @@ header{
     letter-spacing: .075rem;
     line-height: 1.5rem;
     z-index: 1;
-
+    
 }
 .item-price{
     text-align: right;

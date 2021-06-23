@@ -1,3 +1,4 @@
+// add imports for loading home, contact, and menu
 let createContentItems = () => {
     const contentItems = document.createElement("div");
     contentItems.classList.add("content-items","padding-btm");
@@ -20,6 +21,7 @@ let createHeader = () =>{
 let createNav = () =>{
     const navBar = document.createElement("nav");
 
+    // adding tabs to nav-bar
     const tabDiv = document.createElement("div");
     tabDiv.classList.add("tabs" ,"d-flex","center");
     
@@ -28,19 +30,48 @@ let createNav = () =>{
     welcomeBtn.classList.add("nav-btn");
     tabDiv.appendChild(welcomeBtn);
 
-    const menu = document.createElement("button");
-    menu.textContent="Menu";
-    menu.classList.add("nav-btn");
-    tabDiv.appendChild(menu);
+    const menuBtn = document.createElement("button");
+    menuBtn.textContent="Menu";
+    menuBtn.classList.add("nav-btn");
+    tabDiv.appendChild(menuBtn);
 
-    const contact = document.createElement("button");
-    contact.textContent="Contact";
-    contact.classList.add("nav-btn", "blue");
-    tabDiv.appendChild(contact);
+    const contactBtn = document.createElement("button");
+    contactBtn.textContent="Contact";
+    contactBtn.classList.add("nav-btn", "blue");
+    tabDiv.appendChild(contactBtn);
 
     navBar.appendChild(tabDiv);
 
+    // adding event-listeners
+    welcomeBtn.addEventListener("click", (e) => {
+        
+        addActive(welcomeBtn);
+        loadContact();
+    })
+    menuBtn.addEventListener("click",(e)=>{
+        addActive(menuBtn);
+        loadMenu();
+    })
+    contactBtn.addEventListener("click", (e) => {
+        
+        addActive(contactBtn);
+        loadContact();
+    })
+    
+    
+
     return navBar;
+}
+let addActive = (btn) => {
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach((button)=> {
+        if(button !== btn){
+            button.classList.remove("active");
+        }
+        else {
+            button.classList.add("active");
+        }
+    })
 }
 let createFooter = () => {
     const footer = document.createElement("footer");

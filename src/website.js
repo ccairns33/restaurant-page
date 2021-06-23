@@ -1,3 +1,9 @@
+let createContentItems = () => {
+    const contentItems = document.createElement("div");
+    contentItems.classList.add("content-items");
+
+    return contentItems;
+}
 
 let createHeader = () =>{
     const header = document.createElement("header");
@@ -7,7 +13,6 @@ let createHeader = () =>{
     logo.classList.add("logo");
     logo.textContent = "Il Caffé Carissimi";
     header.appendChild(logo);
-    console.log("hi");
 
     return header;
 
@@ -39,8 +44,11 @@ let createNav = () =>{
 }
 let initWebsite = () =>{
     const content = document.querySelector(".content");
-    content.appendChild(createHeader());
-    content.appendChild(createNav());
+    content.appendChild(createContentItems());
+
+    const contentItems = document.querySelector(".content-items");
+    contentItems.appendChild(createHeader());
+    contentItems.appendChild(createNav());
 }
 
 

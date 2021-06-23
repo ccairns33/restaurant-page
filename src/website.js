@@ -42,13 +42,34 @@ let createNav = () =>{
 
     return navBar;
 }
+let createFooter = () => {
+    const footer = document.createElement("footer");
+    footer.classList.add("d-flex")
+
+    const insta = document.createElement("i");
+    insta.classList.add("fab", "fa-instagram");
+    footer.appendChild(insta);
+
+    const mail = document.createElement("i");
+    mail.classList.add("fas", "fa-envelope");
+    footer.appendChild(mail);
+
+    const github = document.createElement("i");
+    github.classList.add("fab", "fa-github-square");
+    footer.appendChild(github);
+
+    return footer;
+}
 let initWebsite = () =>{
     const content = document.querySelector(".content");
     content.appendChild(createContentItems());
 
     const contentItems = document.querySelector(".content-items");
+    
     contentItems.appendChild(createHeader());
     contentItems.appendChild(createNav());
+    contentItems.appendChild(createFooter());
+
 }
 
 

@@ -49,13 +49,11 @@ let createNav = () =>{
     contactBtn.classList.add("nav-btn", "blue");
     tabDiv.appendChild(contactBtn);
 
-    navBar.appendChild(tabDiv);
-
     // adding event-listeners
     welcomeBtn.addEventListener("click", (e) => {
         
         addActive(welcomeBtn);
-        loadHome();
+        initWebsite();
     })
     menuBtn.addEventListener("click",(e)=>{
         addActive(menuBtn);
@@ -68,6 +66,7 @@ let createNav = () =>{
     })
     
     
+    navBar.appendChild(tabDiv);
 
     return navBar;
 }
@@ -102,6 +101,7 @@ let createFooter = () => {
 }
 let initWebsite = () =>{
     const content = document.querySelector(".content");
+    
     content.appendChild(createContentItems());
 
     const contentItems = document.querySelector(".content-items");
@@ -110,6 +110,9 @@ let initWebsite = () =>{
     contentItems.appendChild(createNav());
     contentItems.appendChild(createFooter());
 
+    const btns = document.querySelectorAll(".nav-btns");
+    
+    
 }
 
 export default initWebsite;

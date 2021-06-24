@@ -1,4 +1,4 @@
-import navBarColorChange from "./menu"
+import navBarColorChange from "./navChange"
 
 let loadContact = () => {
     const content = document.querySelector(".content");
@@ -7,8 +7,7 @@ let loadContact = () => {
     if(contactItems.classList.contains("loaded")){
         return;
     }
-    // navBarColorChange("contact");
-    //not working w import
+    navBarColorChange("contact");
 
     contactItems.className = "";
     contactItems.classList.add("contact-items","loaded");

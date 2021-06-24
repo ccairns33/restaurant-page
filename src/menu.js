@@ -1,3 +1,4 @@
+import navBarColorChange from "./navChange"
 let loadMenu = () => {
     const content = document.querySelector(".content");
     const menuItems = content.querySelector("#content-items");
@@ -15,15 +16,7 @@ let loadMenu = () => {
     navBarColorChange("menu");
 
 }
-let navBarColorChange = (btnLabel) => {
-    let buttons = document.querySelectorAll("button");
-    buttons.forEach((button)=> {
-        if(button.id !== btnLabel){
-            button.classList.remove("blue");
-            button.classList.add("grey");
-        }
-    });
-}
+
 let addMenuItems = () =>{
     const menuContent =document.createElement("div");
     menuContent.classList.add("menu-content", "blue");
@@ -82,3 +75,4 @@ let menuItem = (text, price, bool) =>{
     
 }
 export default loadMenu;
+ 

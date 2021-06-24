@@ -81,4 +81,4 @@ let menuItem = (text, price, bool) =>{
     }
     
 }
-export default {loadMenu, navBarColorChange};
+export default loadMenu;

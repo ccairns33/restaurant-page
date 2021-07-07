@@ -10,27 +10,23 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "loadContact": () => (/* binding */ loadContact)
 /* harmony export */ });
-/* harmony import */ var _navChange__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./navChange */ "./src/navChange.js");
+/* harmony import */ var _website_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./website.js */ "./src/website.js");
 
 
 let loadContact = () => {
     const content = document.querySelector(".content");
-    const contactItems = content.querySelector("#content-items");
+    const contactItems = content.querySelector("#main-content");
 
-    if(contactItems.classList.contains("loaded")){
-        return;
-    }
-    (0,_navChange__WEBPACK_IMPORTED_MODULE_0__.default)("contact");
+    contactItems.className = '';
 
-    contactItems.className = "";
-    contactItems.classList.add("contact-items","loaded");
+    (0,_website_js__WEBPACK_IMPORTED_MODULE_0__.navBarColorChange)("contact");
     contactItems.appendChild(addContactItems());
 }
 let addContactItems = () => {
     const contactContent = document.createElement("div");
-    contactContent.classList.add("contact-content", "blue");
+    contactContent.classList.add("contact", "blue");
 
     const location= document.createElement("div");
     location.classList.add("location");
@@ -84,7 +80,40 @@ let addContactItems = () => {
 }
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadContact);
+
+
+/***/ }),
+
+/***/ "./src/home.js":
+/*!*********************!*\
+  !*** ./src/home.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "loadHome": () => (/* binding */ loadHome)
+/* harmony export */ });
+/* harmony import */ var _website_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./website.js */ "./src/website.js");
+
+let loadHome = () => {
+    const homeContent = document.querySelector("#main-content");
+
+   homeContent.className = '';
+    (0,_website_js__WEBPACK_IMPORTED_MODULE_0__.navBarColorChange)("home");
+
+    homeContent.appendChild(addHome());
+}
+let addHome = () => {
+    const homeContent = document.createElement("div");
+    homeContent.classList.add("home");
+    
+
+
+    return homeContent;
+
+}
+
 
 /***/ }),
 
@@ -96,25 +125,19 @@ let addContactItems = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "loadMenu": () => (/* binding */ loadMenu)
 /* harmony export */ });
-/* harmony import */ var _navChange__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./navChange */ "./src/navChange.js");
+/* harmony import */ var _website__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./website */ "./src/website.js");
 
 let loadMenu = () => {
     const content = document.querySelector(".content");
-    const menuItems = content.querySelector("#content-items");
+    const menuItems = content.querySelector("#main-content");
     
-    //preventing from loading more than once
-    if(menuItems.classList.contains("loaded")){
-        return;
-    }
+    
     //remove all class names
     menuItems.className = '';
-
-    //add menu class
-    menuItems.classList.add("menu-items", "loaded");
     menuItems.appendChild(addMenuItems());
-    (0,_navChange__WEBPACK_IMPORTED_MODULE_0__.default)("menu");
+    (0,_website__WEBPACK_IMPORTED_MODULE_0__.navBarColorChange)("menu");
 
 }
 
@@ -175,31 +198,8 @@ let menuItem = (text, price, bool) =>{
     }
     
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadMenu);
+
  
-
-/***/ }),
-
-/***/ "./src/navChange.js":
-/*!**************************!*\
-  !*** ./src/navChange.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-let navBarColorChange = (btnLabel) => {
-    let buttons = document.querySelectorAll("button");
-    buttons.forEach((button)=> {
-        if(button.id !== btnLabel){
-            button.classList.remove("blue");
-            button.classList.add("grey");
-        }
-    });
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (navBarColorChange);
 
 /***/ }),
 
@@ -211,23 +211,25 @@ let navBarColorChange = (btnLabel) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "initWebsite": () => (/* binding */ initWebsite),
+/* harmony export */   "createHeader": () => (/* binding */ createHeader),
+/* harmony export */   "createNav": () => (/* binding */ createNav),
+/* harmony export */   "createMainSection": () => (/* binding */ createMainSection),
+/* harmony export */   "createFooter": () => (/* binding */ createFooter),
+/* harmony export */   "navBarColorChange": () => (/* binding */ navBarColorChange)
 /* harmony export */ });
 /* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu.js */ "./src/menu.js");
 /* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact.js */ "./src/contact.js");
+/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home.js */ "./src/home.js");
 // add imports for loading home, contact, and menu
 
 
 
 
 
-let createContentItems = () => {
-    const contentItems = document.createElement("div");
-    contentItems.classList.add("content-items");
-    contentItems.setAttribute("id", "content-items")
 
-    return contentItems;
-}
+
+
 
 let createHeader = () =>{
     const header = document.createElement("header");
@@ -250,42 +252,51 @@ let createNav = () =>{
     
     const welcomeBtn = document.createElement("button");
     welcomeBtn.textContent="Benvenuto!";
-    welcomeBtn.classList.add("nav-btn");
-    welcomeBtn.id="home";
+    welcomeBtn.classList.add("active"); //default page
+    welcomeBtn.setAttribute("id","home");
+    welcomeBtn.classList.add("gold", "nav-btn");
+
     tabDiv.appendChild(welcomeBtn);
 
     const menuBtn = document.createElement("button");
     menuBtn.textContent="Menu";
-    menuBtn.id="menu";
-    menuBtn.classList.add("nav-btn");
+    menuBtn.setAttribute("id","menu");
+    menuBtn.classList.add("gold", "nav-btn");
+
     tabDiv.appendChild(menuBtn);
 
     const contactBtn = document.createElement("button");
     contactBtn.textContent="Contact";
-    contactBtn.id="contact";
-    contactBtn.classList.add("nav-btn", "blue");
+    contactBtn.setAttribute("id","contact");
+
+    contactBtn.classList.add("blue", "nav-btn");
     tabDiv.appendChild(contactBtn);
 
     // adding event-listeners
     welcomeBtn.addEventListener("click", (e) => {
-        
+        clear();
         addActive(welcomeBtn);
-        initWebsite();
+        (0,_home_js__WEBPACK_IMPORTED_MODULE_2__.loadHome)();
     })
     menuBtn.addEventListener("click",(e)=>{
+        clear();
         addActive(menuBtn);
-        (0,_menu_js__WEBPACK_IMPORTED_MODULE_0__.default)();
+        (0,_menu_js__WEBPACK_IMPORTED_MODULE_0__.loadMenu)();
     })
     contactBtn.addEventListener("click", (e) => {
-        
+        clear();
         addActive(contactBtn);
-        (0,_contact_js__WEBPACK_IMPORTED_MODULE_1__.default)();
+        (0,_contact_js__WEBPACK_IMPORTED_MODULE_1__.loadContact)();
     })
     
     
     navBar.appendChild(tabDiv);
 
     return navBar;
+}
+let clear = () =>{
+    let main = document.querySelector("#main-content");
+    main.innerHTML="";
 }
 let addActive = (btn) => {
     const buttons = document.querySelectorAll("button");
@@ -297,6 +308,16 @@ let addActive = (btn) => {
             button.classList.add("active");
         }
     })
+}
+let createMainSection = () => {
+    const main = document.createElement("div");
+    main.classList.add("home");
+    main.setAttribute("id", "content-items");
+    main.setAttribute("id", "main-content");
+
+
+
+    return main;
 }
 let createFooter = () => {
     const footer = document.createElement("footer");
@@ -316,23 +337,35 @@ let createFooter = () => {
 
     return footer;
 }
+let navBarColorChange = (btnLabel) => {
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach((button)=> {
+        if(button.id !== btnLabel){
+            button.classList.remove("blue");
+            button.classList.remove("gold");
+            button.classList.add("grey");
+        }
+        else{
+            button.classList.add("gold");
+        }
+    });
+}
 let initWebsite = () =>{
     const content = document.querySelector(".content");
     
-    content.appendChild(createContentItems());
 
-    const contentItems = document.querySelector(".content-items");
     
-    contentItems.appendChild(createHeader());
-    contentItems.appendChild(createNav());
-    contentItems.appendChild(createFooter());
+    content.appendChild(createHeader());
+    content.appendChild(createNav());
+    content.appendChild(createMainSection());
+    content.appendChild(createFooter());
 
-    const btns = document.querySelectorAll(".nav-btns");
     
     
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initWebsite);
+
+
 
 /***/ })
 
@@ -401,7 +434,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _website_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./website.js */ "./src/website.js");
 
-(0,_website_js__WEBPACK_IMPORTED_MODULE_0__.default)();
+(0,_website_js__WEBPACK_IMPORTED_MODULE_0__.initWebsite)();
 })();
 
 /******/ })()

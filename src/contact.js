@@ -1,21 +1,17 @@
-import navBarColorChange from "./navChange"
+import {navBarColorChange} from "./website.js"
 
 let loadContact = () => {
     const content = document.querySelector(".content");
-    const contactItems = content.querySelector("#content-items");
+    const contactItems = content.querySelector("#main-content");
 
-    if(contactItems.classList.contains("loaded")){
-        return;
-    }
+    contactItems.className = '';
+
     navBarColorChange("contact");
-
-    contactItems.className = "";
-    contactItems.classList.add("contact-items","loaded");
     contactItems.appendChild(addContactItems());
 }
 let addContactItems = () => {
     const contactContent = document.createElement("div");
-    contactContent.classList.add("contact-content", "blue");
+    contactContent.classList.add("contact", "blue");
 
     const location= document.createElement("div");
     location.classList.add("location");
@@ -69,4 +65,4 @@ let addContactItems = () => {
 }
 
 
-export default loadContact;
+export {loadContact};

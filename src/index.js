@@ -1,2 +1,2 @@
-import initWebsite from "./website.js";
+import {initWebsite } from "./website.js";
 initWebsite();

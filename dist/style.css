@@ -24,7 +24,6 @@ header{
     margin: 1rem;
     background: transparent;
     border: none;
-    color: #e6c383;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: .25rem;
@@ -47,8 +46,13 @@ img{
     margin-top:2rem;
     margin-bottom: 2rem;
 }
-.contact-content{
-    margin: 3% 23% 3% 23%;
+.tabs{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+}
+.contact{
+    margin: 8% 23% 3% 23%;
     padding-bottom: 5%;
     text-align: center;
     font-weight: 300;
@@ -61,7 +65,7 @@ img{
 
 /* color: #bca77c; coffee color*/
 .menu-content{
-    margin: 5% 23% 3% 23%;
+    margin: 8% 23% 3% 23%;
     padding-bottom: 5%;
     font-weight: 300;
     font-size: .9rem;
@@ -72,6 +76,9 @@ img{
 }
 .item-price{
     text-align: right;
+}
+.gold {
+    color: #e6c383;
 }
 .menu-item-container{
     margin-top: 2rem;
@@ -86,7 +93,7 @@ img{
 .space-btwn{
     justify-content: space-between;
 }
-.nav-btn:hover{
+#nav-btn:hover{
     transform: translateY(-20%);
 }
 button:hover{
@@ -100,9 +107,9 @@ button:hover{
     position: relative;
     min-height: 100vh;
 }
-.content-items{
+.home{
     background-image:url("cappucino.jpg");
-    height:600px;
+    height:91vh;
     background-size: cover;
     background-position: 50% 50%;
     

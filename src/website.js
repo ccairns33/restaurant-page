@@ -1,16 +1,12 @@
 // add imports for loading home, contact, and menu
-import loadMenu from "./menu.js";
-import loadContact from "./contact.js";
+import {loadMenu} from "./menu.js";
+import {loadContact} from "./contact.js";
+import {loadHome} from "./home.js";
 
 
 
-let createContentItems = () => {
-    const contentItems = document.createElement("div");
-    contentItems.classList.add("content-items");
-    contentItems.setAttribute("id", "content-items")
 
-    return contentItems;
-}
+
 
 let createHeader = () =>{
     const header = document.createElement("header");
@@ -33,34 +29,39 @@ let createNav = () =>{
     
     const welcomeBtn = document.createElement("button");
     welcomeBtn.textContent="Benvenuto!";
-    welcomeBtn.classList.add("nav-btn");
-    welcomeBtn.id="home";
+    welcomeBtn.classList.add("active"); //default page
+    welcomeBtn.setAttribute("id","home");
+    welcomeBtn.classList.add("gold", "nav-btn");
+
     tabDiv.appendChild(welcomeBtn);
 
     const menuBtn = document.createElement("button");
     menuBtn.textContent="Menu";
-    menuBtn.id="menu";
-    menuBtn.classList.add("nav-btn");
+    menuBtn.setAttribute("id","menu");
+    menuBtn.classList.add("gold", "nav-btn");
+
     tabDiv.appendChild(menuBtn);
 
     const contactBtn = document.createElement("button");
     contactBtn.textContent="Contact";
-    contactBtn.id="contact";
-    contactBtn.classList.add("nav-btn", "blue");
+    contactBtn.setAttribute("id","contact");
+
+    contactBtn.classList.add("blue", "nav-btn");
     tabDiv.appendChild(contactBtn);
 
     // adding event-listeners
     welcomeBtn.addEventListener("click", (e) => {
-        
+        clear();
         addActive(welcomeBtn);
-        initWebsite();
+        loadHome();
     })
     menuBtn.addEventListener("click",(e)=>{
+        clear();
         addActive(menuBtn);
         loadMenu();
     })
     contactBtn.addEventListener("click", (e) => {
-        
+        clear();
         addActive(contactBtn);
         loadContact();
     })
@@ -69,6 +70,10 @@ let createNav = () =>{
     navBar.appendChild(tabDiv);
 
     return navBar;
+}
+let clear = () =>{
+    let main = document.querySelector("#main-content");
+    main.innerHTML="";
 }
 let addActive = (btn) => {
     const buttons = document.querySelectorAll("button");
@@ -80,6 +85,16 @@ let addActive = (btn) => {
             button.classList.add("active");
         }
     })
+}
+let createMainSection = () => {
+    const main = document.createElement("div");
+    main.classList.add("home");
+    main.setAttribute("id", "content-items");
+    main.setAttribute("id", "main-content");
+
+
+
+    return main;
 }
 let createFooter = () => {
     const footer = document.createElement("footer");
@@ -99,20 +114,31 @@ let createFooter = () => {
 
     return footer;
 }
+let navBarColorChange = (btnLabel) => {
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach((button)=> {
+        if(button.id !== btnLabel){
+            button.classList.remove("blue");
+            button.classList.remove("gold");
+            button.classList.add("grey");
+        }
+        else{
+            button.classList.add("gold");
+        }
+    });
+}
 let initWebsite = () =>{
     const content = document.querySelector(".content");
     
-    content.appendChild(createContentItems());
 
-    const contentItems = document.querySelector(".content-items");
     
-    contentItems.appendChild(createHeader());
-    contentItems.appendChild(createNav());
-    contentItems.appendChild(createFooter());
+    content.appendChild(createHeader());
+    content.appendChild(createNav());
+    content.appendChild(createMainSection());
+    content.appendChild(createFooter());
 
-    const btns = document.querySelectorAll(".nav-btns");
     
     
 }
 
-export default initWebsite;
+export { initWebsite, createHeader, createNav,createMainSection, createFooter,navBarColorChange  };

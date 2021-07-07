@@ -1,17 +1,11 @@
-import navBarColorChange from "./navChange"
+import {navBarColorChange} from "./website"
 let loadMenu = () => {
     const content = document.querySelector(".content");
-    const menuItems = content.querySelector("#content-items");
+    const menuItems = content.querySelector("#main-content");
     
-    //preventing from loading more than once
-    if(menuItems.classList.contains("loaded")){
-        return;
-    }
+    
     //remove all class names
     menuItems.className = '';
-
-    //add menu class
-    menuItems.classList.add("menu-items", "loaded");
     menuItems.appendChild(addMenuItems());
     navBarColorChange("menu");
 
@@ -74,5 +68,5 @@ let menuItem = (text, price, bool) =>{
     }
     
 }
-export default loadMenu;
+export {loadMenu};
  

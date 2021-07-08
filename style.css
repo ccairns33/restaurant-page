@@ -93,7 +93,7 @@ img{
 .space-btwn{
     justify-content: space-between;
 }
-#nav-btn:hover{
+.nav-btn:hover{
     transform: translateY(-20%);
 }
 button:hover{

@@ -111,7 +111,7 @@ Project Link: [https://github.com/ccairns33/restaurant-page](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: dist/screencapture-restaurant.png
-[product-screenshot2]: dist/screencapture-restaurant-menu-gallery.png
+[product-screenshot2]: dist/screencapture-restaurant-menu.png
 [product-screenshot3]: dist/screencapture-restaurant-contact.png
 <!-- [product-screenshot4]: public/images/screencapture-sardiniandisruption-mobile.png -->
 

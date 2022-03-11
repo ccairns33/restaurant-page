@@ -19,6 +19,7 @@
   <p align="center">
 Restaurant page created with DOM manipulation by dynamically rendering the entire contents of the website! <br />
     <a href="https://github.com/ccairns33/restaurant-page"><strong>Explore the docs »</strong></a>
+    <a href="https://ccairns33.github.io/restaurant-page/dist/"><strong>Live Demo! »</strong></a>
     <br />
 
   </p>
